@@ -1,0 +1,61 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package hm.pkg4;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class HM4 {
+
+    /**
+     * @param args the command line arguments
+     */
+     abstract class Sale {
+    protected String name;
+    protected double price;
+    
+    public Sale(String name, double price){
+        this.name = name;
+        this.price = price;
+        
+    }
+    
+    public abstract double calculateTotal();
+    
+    }
+     
+     class PhoneSale extends sale {
+        private int quantity;
+        private final double price;
+       
+        public PhoneSale(double price, int quiantity) {
+            {
+            super(name, price);
+            this.quantity = quantity;
+        }
+            this.price = 0;
+              }
+    
+    public double calculateTotal() {
+            int price = 0;
+        return price * quantity;
+    }
+    }
+class RepairService extends Sale {
+    private int hours;
+    
+    public RepairService(double pricePerHour, int hours) {
+        super("Repair", pricePerHour);
+        this.hours = hours;
+    }
+
+        @Override
+        public double calculateTotal() {
+         return price * hours;
+    }
+}
+        
+        }
