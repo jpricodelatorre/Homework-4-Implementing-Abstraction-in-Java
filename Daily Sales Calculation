@@ -26,24 +26,23 @@ public class HM4 {
     public abstract double calculateTotal();
     
     }
-     
+
+      // PhoneSale class
      class PhoneSale extends sale {
         private int quantity;
-        private final double price;
        
-        public PhoneSale(double price, int quiantity) {
-            {
-            super(name, price);
+        public PhoneSale(String name, double price, int quantity) {
+           super(name, price);
             this.quantity = quantity;
         }
-            this.price = 0;
-              }
-    
-    public double calculateTotal() {
-            int price = 0;
-        return price * quantity;
+
+ @Override
+        public double calculateTotal() {
+            return price * quantity;
+        }
     }
-    }
+
+    // RepairService class
 class RepairService extends Sale {
     private int hours;
     
@@ -58,4 +57,16 @@ class RepairService extends Sale {
     }
 }
         
-        }
+     // Add a main method to run the program
+    public static void main(String[] args) {
+        // Create an instance of HM4
+        HM4 calculator = new HM4();
+
+        // Example usage:
+        PhoneSale phoneSale = calculator.new PhoneSale("Phone Model A", 500.0, 3);
+        RepairService repairService = calculator.new RepairService(50.0, 2);
+
+        System.out.println("Phone Sale Total: " + phoneSale.calculateTotal());
+        System.out.println("Repair Service Total: " + repairService.calculateTotal());
+    }
+}
