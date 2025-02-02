@@ -1,66 +1,58 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package hm.pkg4;
 
-/**
- *
- * @author ADMIN
- */
-public class HM4 {
+package com.mycompany.dailysalescalculation;
 
-    /**
-     * @param args the command line arguments
-     */
-     abstract class Sale {
-    protected String name;
-    protected double price;
-    
-    public Sale(String name, double price){
-        this.name = name;
-        this.price = price;
-        
-    }
-    
-    public abstract double calculateTotal();
-    
+public class DailySalesCalculation {
+
+    // Abstract Sale class
+      abstract class Sale {
+        protected String name;
+        protected double price;
+
+      public Sale(String name, double price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        public abstract double calculateTotal();
     }
 
-      // PhoneSale class
-     class PhoneSale extends sale {
+    // PhoneSale class
+    class PhoneSale extends Sale {
         private int quantity;
-       
+
         public PhoneSale(String name, double price, int quantity) {
-           super(name, price);
+            super(name, price);
             this.quantity = quantity;
         }
 
- @Override
+        @Override
         public double calculateTotal() {
             return price * quantity;
         }
     }
 
     // RepairService class
-class RepairService extends Sale {
-    private int hours;
-    
-    public RepairService(double pricePerHour, int hours) {
-        super("Repair", pricePerHour);
-        this.hours = hours;
-    }
+    class RepairService extends Sale {
+        private int hours;
+
+        public RepairService(double pricePerHour, int hours) {
+            super("Repair", pricePerHour);
+            this.hours = hours;
+        }
 
         @Override
         public double calculateTotal() {
-         return price * hours;
+            return price * hours;
+        }
     }
-}
-        
-     // Add a main method to run the program
+
+    // Add a main method to run the program
     public static void main(String[] args) {
-        // Create an instance of HM4
-        HM4 calculator = new HM4();
+        // Create an instance of DailySalesCalculation
+        DailySalesCalculation calculator = new DailySalesCalculation();
 
         // Example usage:
         PhoneSale phoneSale = calculator.new PhoneSale("Phone Model A", 500.0, 3);
